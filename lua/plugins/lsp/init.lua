@@ -1,0 +1,7 @@
+require("plugins.lsp.lspconfig")
+require("plugins.lsp.mason")
+require("plugins.lsp.lazydev")
+require("plugins.lsp.luals")
+require("plugins.lsp.nixd")
+require("plugins.lsp.rust")
+require("plugins.lsp.php")
