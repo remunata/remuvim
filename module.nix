@@ -16,6 +16,11 @@ inputs:
 
   config.settings.config_directory = ./.;
 
+  config.settings.dont_link = true;
+
+  config.binName = "nvim";
+  config.settings.aliases = [ "vi" ];
+
   config.settings.colorscheme = "terafox";
   config.specs.colorscheme = {
     lazy = true;
