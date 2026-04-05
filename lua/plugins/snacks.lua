@@ -16,6 +16,7 @@ nixInfo.lze.load({
 						},
 					},
 				},
+				bigfile = {},
 				git = {},
 				scope = {},
 				notifier = {},

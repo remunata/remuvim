@@ -122,6 +122,7 @@ inputs:
       ripgrep
       fd
       universal-ctags
+      imagemagick
     ];
 
     lazy = true;
