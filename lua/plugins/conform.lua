@@ -7,12 +7,19 @@ nixInfo.lze.load({
 		},
 		after = function(plugin)
 			local conform = require("conform")
+			local prettier_fmt = { "prettierd", "prettier", stop_after_first = true }
 
 			conform.setup({
 				formatters_by_ft = {
-					lua = nixInfo(nil, "settings", "cats", "lua") and { "stylua" } or nil,
-					rust = nixInfo(nil, "settings", "cats", "rust") and { "rustfmt" } or nil,
-					go = nixInfo(nil, "settings", "cats", "go") and { "gofumpt" } or nil,
+					lua = { "stylua" },
+					rust = { "rustfmt" },
+					go = { "gofumpt" },
+
+					javascript = prettier_fmt,
+					typescript = prettier_fmt,
+					javascriptreact = prettier_fmt,
+					typescriptreact = prettier_fmt,
+
 					php = function(bufnr)
 						local bufname = vim.api.nvim_buf_get_name(bufnr)
 						-- If inside "Views", return empty table {}

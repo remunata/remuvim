@@ -99,6 +99,8 @@ inputs:
     extraPackages = with pkgs; [
       vscode-langservers-extracted
       typescript-language-server
+      tailwindcss-language-server
+      prettierd
     ];
   };
 
