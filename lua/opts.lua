@@ -2,10 +2,6 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
--- [[ Setting options ]]
--- See `:help vim.o`
--- NOTE: You can change these options as you wish!
-
 -- allow .nvim.lua in current dir and parents (project config)
 vim.o.exrc = false -- can be toggled off in that file to stop it from searching further
 
@@ -25,6 +21,9 @@ vim.opt.inccommand = "split"
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 
+-- Highlight current line
+vim.opt.cursorline = true
+
 -- Make line numbers default
 vim.wo.number = true
 
@@ -32,14 +31,11 @@ vim.wo.number = true
 vim.o.mouse = "a"
 
 -- Indent
--- vim.o.smarttab = true
 vim.opt.cpoptions:append("I")
 vim.o.expandtab = true
--- vim.o.smartindent = true
--- vim.o.autoindent = true
--- vim.o.tabstop = 4
--- vim.o.softtabstop = 4
--- vim.o.shiftwidth = 4
+vim.o.smartindent = true
+vim.o.shiftwidth = 2
+vim.o.tabstop = 2
 
 -- stops line wrapping from being confusing
 vim.o.breakindent = true
@@ -62,7 +58,6 @@ vim.o.timeoutlen = 300
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = "menu,preview,noselect"
 
--- NOTE: You should make sure your terminal supports this
 vim.o.termguicolors = true
 
 -- [[ Disable auto comment on enter ]]

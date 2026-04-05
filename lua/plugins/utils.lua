@@ -15,4 +15,20 @@ nixInfo.lze.load({
 			require("fidget").setup({})
 		end,
 	},
+	{
+		"nvim-autopairs",
+		auto_enable = true,
+		event = "InsertEnter",
+		after = function(plugin)
+			require("nvim-autopairs").setup({})
+		end,
+	},
+	{
+		"nvim-ts-autotag",
+		auto_enable = true,
+		event = { "BufReadPre", "BufNewFile" },
+		after = function()
+			require("nvim-ts-autotag").setup({})
+		end,
+	},
 })

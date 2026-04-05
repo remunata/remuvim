@@ -12,6 +12,7 @@ nixInfo.lze.load({
 				formatters_by_ft = {
 					lua = nixInfo(nil, "settings", "cats", "lua") and { "stylua" } or nil,
 					rust = nixInfo(nil, "settings", "cats", "rust") and { "rustfmt" } or nil,
+					go = nixInfo(nil, "settings", "cats", "go") and { "gofumpt" } or nil,
 					php = function(bufnr)
 						local bufname = vim.api.nvim_buf_get_name(bufnr)
 						-- If inside "Views", return empty table {}

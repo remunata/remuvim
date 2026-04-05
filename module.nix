@@ -55,6 +55,16 @@ inputs:
     ];
   };
 
+  config.specs.go = {
+    after = [ "general" ];
+    data = null;
+    lazy = true;
+    extraPackages = with pkgs; [
+      gopls
+      gofumpt
+    ];
+  };
+
   config.specs.rust = {
     after = [ "general" ];
     data = null;
@@ -65,12 +75,41 @@ inputs:
     ];
   };
 
+  config.specs.java = {
+    after = ["general"];
+    data = null;
+    extraPackages = with pkgs; [
+      jdt-language-server
+    ];
+  };
+
   config.specs.php = {
     after = [ "general" ];
     data = null;
     lazy = true;
     extraPackages = with pkgs; [
       intelephense
+    ];
+  };
+
+  config.specs.web = {
+    after = [ "general" ];
+    data = null;
+    lazy = true;
+    extraPackages = with pkgs; [
+      vscode-langservers-extracted
+      typescript-language-server
+    ];
+  };
+
+  config.specs.yjs = {
+    after = ["general"];
+    data = with pkgs.vimPlugins; [
+      SchemaStore-nvim
+    ];
+    lazy = false; # TODO: lazy load SchemaStore-nvim
+    extraPackages = with pkgs; [
+      yaml-language-server
     ];
   };
 
@@ -117,6 +156,8 @@ inputs:
       nvim-treesitter.withAllGrammars
       noice-nvim
       dropbar-nvim
+      nvim-autopairs
+      nvim-ts-autotag
     ];
   };
 

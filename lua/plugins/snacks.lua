@@ -17,8 +17,16 @@ nixInfo.lze.load({
 					},
 				},
 				git = {},
-				terminal = {},
 				scope = {},
+				notifier = {},
+				terminal = {
+					win = {
+						position = "float",
+						border = "rounded",
+						width = 0.82,
+						height = 0.82,
+					},
+				},
 				indent = {
 					scope = {
 						hl = "MySnacksIndent",
@@ -88,12 +96,13 @@ nixInfo.lze.load({
 					end)
 				end
 			end
-			-- NOTE: we aren't loading this lazily, and the keybinds already are so it is fine to just set these here
-			vim.keymap.set("n", "-", function()
+
+			-- keymaps
+			vim.keymap.set("n", "\\", function()
 				Snacks.explorer.open()
 			end, { desc = "Snacks file explorer" })
-			vim.keymap.set("n", "<c-\\>", function()
-				Snacks.terminal.open()
+			vim.keymap.set({ "n", "t" }, "<c-\\>", function()
+				Snacks.terminal.toggle()
 			end, { desc = "Snacks Terminal" })
 			vim.keymap.set("n", "<leader>_", function()
 				Snacks.lazygit.open()
@@ -104,6 +113,7 @@ nixInfo.lze.load({
 			vim.keymap.set("n", "<leader><leader>s", function()
 				Snacks.picker.buffers()
 			end, { desc = "Search Buffers" })
+
 			-- find
 			vim.keymap.set("n", "<leader>ff", function()
 				Snacks.picker.files()
@@ -111,6 +121,7 @@ nixInfo.lze.load({
 			vim.keymap.set("n", "<leader>fg", function()
 				Snacks.picker.git_files()
 			end, { desc = "Find Git Files" })
+
 			-- Grep
 			vim.keymap.set("n", "<leader>sb", function()
 				Snacks.picker.lines()
@@ -124,6 +135,7 @@ nixInfo.lze.load({
 			vim.keymap.set({ "n", "x" }, "<leader>sw", function()
 				Snacks.picker.grep_word()
 			end, { desc = "Visual selection or ord" })
+
 			-- search
 			vim.keymap.set("n", "<leader>sb", function()
 				Snacks.picker.lines()
@@ -161,6 +173,14 @@ nixInfo.lze.load({
 			vim.keymap.set("n", "<leader>su", function()
 				Snacks.picker.undo()
 			end, { desc = "Undo History" })
+			vim.keymap.set("n", "<leader>sn", function()
+				Snacks.picker.notifications()
+			end, { desc = "Notification history" })
+
+			-- notifications
+			vim.keymap.set("n", "<leader>n", function()
+				Snacks.notifier.hide()
+			end, { desc = "Dismiss all notifications" })
 		end,
 	},
 })
