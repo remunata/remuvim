@@ -76,11 +76,16 @@ inputs:
   };
 
   config.specs.java = {
-    after = ["general"];
+    after = [ "general" ];
     data = null;
     extraPackages = with pkgs; [
       jdt-language-server
     ];
+  };
+
+  config.specs.clang = {
+    after = [ "general" ];
+    data = null;
   };
 
   config.specs.php = {
@@ -105,7 +110,7 @@ inputs:
   };
 
   config.specs.yjs = {
-    after = ["general"];
+    after = [ "general" ];
     data = with pkgs.vimPlugins; [
       SchemaStore-nvim
     ];
