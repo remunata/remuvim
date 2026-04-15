@@ -2,15 +2,24 @@ nixInfo.lze.load({
 	{
 		"trigger_colorscheme",
 		event = "VimEnter",
-		load = function(_name)
+		load = function()
 			vim.schedule(function()
 				vim.cmd.colorscheme(nixInfo(nil, "settings", "colorscheme"))
 			end)
 		end,
 	},
 	{
-		"nightfox.nvim",
+		"catppuccin-nvim",
 		auto_enable = true,
-		colorscheme = { "nightfox", "terafox" },
+		colorscheme = { "catppuccin-nvim" },
+		after = function()
+			require("catppuccin").setup({
+				flavour = "macchiato",
+				transparent_background = true,
+				float = {
+					transparent = true,
+				},
+			})
+		end,
 	},
 })

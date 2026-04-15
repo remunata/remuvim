@@ -21,10 +21,10 @@ inputs:
   config.binName = "nvim";
   config.settings.aliases = [ "vi" ];
 
-  config.settings.colorscheme = "terafox";
+  config.settings.colorscheme = "catppuccin-nvim";
   config.specs.colorscheme = {
     lazy = true;
-    data = pkgs.vimPlugins.nightfox-nvim;
+    data = pkgs.vimPlugins.catppuccin-nvim;
   };
 
   config.specs.lze = [
