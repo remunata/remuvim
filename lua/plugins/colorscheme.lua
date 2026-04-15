@@ -14,7 +14,7 @@ nixInfo.lze.load({
 		colorscheme = { "catppuccin-nvim" },
 		after = function()
 			require("catppuccin").setup({
-				flavour = "macchiato",
+				flavour = "mocha",
 				transparent_background = true,
 				float = {
 					transparent = true,
