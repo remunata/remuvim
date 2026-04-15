@@ -166,6 +166,7 @@ inputs:
       dropbar-nvim
       nvim-autopairs
       nvim-ts-autotag
+      neogen
     ];
   };
 
