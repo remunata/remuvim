@@ -9,13 +9,7 @@ nixInfo.lze.load({
 			vim.api.nvim_set_hl(0, "MySnacksIndent", { fg = "#32a88f" })
 			require("snacks").setup({
 				explorer = { replace_netrw = true },
-				picker = {
-					sources = {
-						explorer = {
-							auto_close = true,
-						},
-					},
-				},
+				picker = {},
 				bigfile = {},
 				git = {},
 				scope = {},
